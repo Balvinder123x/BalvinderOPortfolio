@@ -65,7 +65,7 @@ document.getElementById("farmer_box2").addEventListener("click", function () {
   );
 });
 document.getElementById("box2").addEventListener("click", function () {
-  window.open("ar.html", "_self");
+  window.open("AR.html", "_self");
 });
 document.getElementById("box1").addEventListener("click", function () {
   window.open("getPoster.html", "_self");
