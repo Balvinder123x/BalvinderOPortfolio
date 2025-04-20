@@ -93,15 +93,77 @@
         </div>
       </content>
     </page3>
+    <page5 id="page5">
+      <div class="contact-container">
+        <!-- Animated Background Elements -->
+        <div class="deco-circle"></div>
+        <div class="deco-wave"></div>
+
+        <!-- Collaborative Presence Indicator -->
+        <div class="live-presence">
+          <span class="live-dot"></span>
+          <p id="activeUsers"></p>
+        </div>
+
+        <!-- Animated Contact Form -->
+        <div class="contact-form">
+          <h2 class="form-title">Let's Create Together ✨</h2>
+
+          <form id="collabForm">
+            <div class="form-group">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                class="form-input"
+              />
+              <span class="input-border"></span>
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                class="form-input"
+              />
+              <span class="input-border"></span>
+            </div>
+            <div class="form-group">
+              <textarea
+                name="message"
+                placeholder="Your Brilliant Idea..."
+                class="form-input"
+              ></textarea>
+              <span class="input-border"></span>
+            </div>
+            <button type="submit" class="submit-btn">
+              <span>Send Request</span>
+              <div class="arrow-wrapper">
+                <div class="arrow"></div>
+              </div>
+            </button>
+          </form>
+
+          <!-- Animated Testimonials -->
+          <div class="testimonials">
+            <div class="testimonial">
+              <div class="quote-mark">“</div>
+              <p class="testimonial-text">
+                Working together was a game-changer!
+              </p>
+            </div>
+          </div>
+        </div>
+    </page5>
     <page4 id="page4">
       <div class="quote-box">
-      <div class="quote-mark">“</div>
-      <p class="quote-text">
-        Design is not just what it looks like<br>
-        and feels like. Design is how it works.
-      </p>
-      <div class="quote-author">- Steve Jobs</div>
-    </div>
+        <div class="quote-mark">“</div>
+        <p class="quote-text">
+          Design is not just what it looks like<br />
+          and feels like. Design is how it works.
+        </p>
+        <div class="quote-author">- Steve Jobs</div>
+      </div>
       <div class="end-decoration">
         <div class="deco-circle"></div>
         <div class="deco-wave"></div>
@@ -113,6 +175,234 @@
         </div>
       </div>
     </page4>
+
+    <style>
+      :root {
+        --primary-accent: #6c5ce7;
+        --secondary-accent: #a66efa;
+        --contact-bg: #f8f9fa;
+        --contact-text: #2d3436;
+        --input-bg: rgba(255, 255, 255, 0.9);
+        --shadow-color: rgba(0, 0, 0, 0.1);
+      }
+
+      .dark-mode {
+        --contact-bg: #1a1a1a;
+        --contact-text: #e6e6e6;
+        --input-bg: rgba(30, 30, 30, 0.9);
+        --shadow-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .contact-container {
+        position: relative;
+        min-height: 100vh;
+        padding: 4rem 2rem;
+        background: var(--contact-bg);
+        color: var(--contact-text);
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* Animated Background Elements */
+      .deco-circle {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(
+          circle,
+          var(--primary-accent) 0%,
+          transparent 70%
+        );
+        opacity: 0.1;
+        right: -200px;
+        top: -200px;
+        animation: float 20s infinite linear;
+      }
+
+      .deco-wave {
+        position: absolute;
+        width: 200%;
+        height: 150px;
+        background: repeating-linear-gradient(
+          -45deg,
+          var(--primary-accent),
+          var(--primary-accent) 20px,
+          transparent 20px,
+          transparent 40px
+        );
+        bottom: -50px;
+        left: -50%;
+        opacity: 0.1;
+        animation: waveSlide 20s linear infinite;
+      }
+
+      /* Contact Form Animation */
+      .contact-form {
+        position: relative;
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 2.5rem;
+        border-radius: 20px;
+        background: var(--input-bg);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px var(--shadow-color);
+        transform: translateY(20px);
+        opacity: 0;
+        animation: formEntrance 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      }
+
+      @keyframes formEntrance {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .form-input {
+        width: 100%;
+        padding: 1rem;
+        margin: 1rem 0;
+        border: none;
+        border-radius: 8px;
+        background: rgba(var(--text-color-rgb), 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .form-input:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px var(--primary-accent);
+      }
+
+      .input-border {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary-accent);
+        transition: width 0.3s ease;
+      }
+
+      .form-input:focus ~ .input-border {
+        width: 100%;
+      }
+
+      /* Animated Submit Button */
+      .submit-btn {
+        position: relative;
+        padding: 1rem 2rem;
+        background: linear-gradient(
+          135deg,
+          var(--primary-accent),
+          var(--secondary-accent)
+        );
+        border: none;
+        border-radius: 50px;
+        color: white;
+        font-weight: 600;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .arrow-wrapper {
+        position: absolute;
+        right: 1.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        animation: arrowFloat 1.5s infinite;
+      }
+
+      .arrow {
+        width: 12px;
+        height: 12px;
+        border: 2px solid white;
+        border-left: 0;
+        border-bottom: 0;
+        transform: rotate(45deg);
+      }
+
+      /* Social Links Animation */
+      .social-link {
+        position: relative;
+        padding: 1.5rem;
+        border-radius: 15px;
+        backdrop-filter: blur(5px);
+        transition: all 0.3s ease;
+      }
+
+      .social-link:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px var(--shadow-color);
+      }
+
+      .social-wave {
+        position: absolute;
+        width: 150%;
+        height: 150%;
+        background: radial-gradient(
+          circle,
+          var(--primary-accent) 0%,
+          transparent 70%
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .social-link:hover .social-wave {
+        opacity: 0.1;
+      }
+
+      /* Keyframe Animations */
+      @keyframes float {
+        0% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+        25% {
+          transform: translate(10px, 10px) rotate(5deg);
+        }
+        50% {
+          transform: translate(0, 20px) rotate(0deg);
+        }
+        75% {
+          transform: translate(-10px, 10px) rotate(-5deg);
+        }
+        100% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+      }
+
+      @keyframes waveSlide {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      @keyframes arrowFloat {
+        0%,
+        100% {
+          transform: translateY(-50%);
+        }
+        50% {
+          transform: translateY(-60%);
+        }
+      }
+
+      /* Dark Mode Adjustments */
+      .dark-mode .contact-form {
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      }
+
+      .dark-mode .social-link {
+        background: rgba(255, 255, 255, 0.05);
+      }
+    </style>
     <script src="script.js"></script>
   </body>
 </html>
