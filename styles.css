@@ -96,6 +96,40 @@ body {
   }
 }
 
+.quote-box {
+  position: relative;
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: var(--tool-card-bg);
+}
+
+.quote-mark {
+  font-size: 4rem;
+  color: var(--text-color);
+  opacity: 0.2;
+  line-height: 1;
+  position: absolute;
+  top: -1rem;
+  left: 0;
+}
+
+.quote-text {
+  color: var(--text-color);
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin: 1rem 0;
+  position: relative;
+}
+
+.quote-author {
+  color: var(--text-color);
+  opacity: 0.8;
+  font-style: italic;
+  text-align: right;
+}
+
 .fade-out {
   opacity: 0;
 }
@@ -546,10 +580,11 @@ body {
 .swipe-element {
   width: 200px;
   height: 60px;
-  background-color: var(--box-bg-1);
+  background-color: var(--box-bg-2);
   border-radius: 30px;
   position: relative;
   cursor: pointer;
+
 }
 
 .swipe-handle {

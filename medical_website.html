@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Management System</title>
+    <style>
+        :root {
+            --primary-color: #2A5C82;
+            --secondary-color: #5BA4E6;
+            --accent-color: #7EC8E3;
+            --text-color: #333;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+            animation-delay: 0.3s;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateX(-100px);
+            animation: slideIn 1s forwards;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 800px;
+            margin: 40px auto;
+            margin-left: 190px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transform: scale(0.95);
+            opacity: 0;
+            animation: imageEntrance 1s forwards;
+            animation-delay: 0.5s;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image:hover {
+            transform: scale(1);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 30px auto;
+            display: block;
+            width: fit-content;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: buttonEntrance 1s forwards;
+            animation-delay: 0.8s;
+            box-shadow: 0 5px 15px rgba(91,164,230,0.4);
+        }
+
+        .cta-button:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(91,164,230,0.6);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes imageEntrance {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes buttonEntrance {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            .hero-image {
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Medical Management Platform</h1>
+        <img src="data/Screenshot 2025-04-12 022040.png" alt="Medical System Interface" class="hero-image">
+        <a href="https://balvinder123x.github.io/medical-store-management-website/" class="cta-button">Explore Website</a>
+    </div>
+
+    <script>
+        // Add intersection observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.container, h1, .hero-image, .cta-button').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

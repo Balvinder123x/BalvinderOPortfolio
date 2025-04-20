@@ -140,3 +140,5 @@ document.addEventListener("DOMContentLoaded", () => {
     : "255,255,255";
   document.documentElement.style.setProperty("--text-color-rgb", rgb);
 });
+
+

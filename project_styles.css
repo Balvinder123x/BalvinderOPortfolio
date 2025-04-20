@@ -171,17 +171,13 @@ page1 {
 .project {
   height: 70px;
   width: 70px;
-  background: #32469f;
+  background: linear-gradient(145deg, #7C3AED, #4F46E5);
   border-radius: 50%;
   margin: 0 25px;
-  box-shadow: 0 0 10px rgba(11, 219, 42, 0.6);
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.4);
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
-.project:hover {
-  transform: scale(1.2);
-  /* background-color: #9d3256; */
-}
-
+.project:hover { transform: scale(1.1); opacity: 0.9; }
 /* 3) Ripple overlays (one per project) */
 .ripple {
   position: fixed;
@@ -237,26 +233,6 @@ page1 {
 .ripple.active #details_box {
   opacity: 1;
 }
-
-#r1 {
-    background: rgba(13, 12, 13, 0.6);
-}
-#r2 {
-  background: rgba(186, 231, 38, 0.6);
-}
-#r3 {
-    background: rgba(34, 179, 80, 0.6);
-}
-#r4 {
-    background: rgba(157, 29, 149, 0.6);
-}
-#r5 {
-    background: rgba(55, 24, 210, 0.6);
-}
-#r6 {
-    background: rgba(224, 90, 90, 0.6);
-}
-
 
 .ripple.active {
   clip-path: circle(100vmax at var(--cx) var(--cy));

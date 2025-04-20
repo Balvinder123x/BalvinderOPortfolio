@@ -162,7 +162,7 @@ page1 content #box2 {
   /* your existing styles */
   height: 14%;
   margin-bottom: 2%;
-  background-color: #e1f080;
+  background-color: var(--circle-color);
   border-radius: 60px;
   border: 2px solid;
   text-align: right;
@@ -299,7 +299,7 @@ page3 #box2 {
   --text-color: #000000;
   --box-bg-1: #f5f5f5;
   --box-bg-2: #ddeeff;
-  --circle-color:rgba(0, 0, 255, 0.44);
+  --circle-color:rgb(216, 255, 101);
   --transition-speed: 0.3s;
 }
 
@@ -311,7 +311,7 @@ page3 #box2 {
   --text-color: #ffffff;
   --box-bg-1: #2d2d2d;
   --box-bg-2: #1e2a3a;
-  --circle-color:rgba(160, 160, 231, 0.44);
+  --circle-color:#3B82F6;
 }
 
 
